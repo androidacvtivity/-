@@ -28,8 +28,8 @@ webform.validators.NR6_25 = function (v, allowOverpass) {
 
     validatePhoneNumber(values.PHONE);
 
-    
-
+    validateRow1AgainstOtherRows();
+ 
 
 
 
@@ -89,6 +89,54 @@ function validatePhoneNumber(phone) {
         });
     }
 }
+
+//---------------------------------------------------
+
+function validateRow1AgainstOtherRows() {
+    // Get the values object from Drupal settings
+    var values = Drupal.settings.mywebform.values;
+
+    // Retrieve the value for rând.1 col.1
+    var col1Row1 = Number(values['CAP1_R1_C1'] || 0); // Assuming this is the key for rând.1 col.1
+
+    // Define the rows to compare against rând.1 col.1
+    var rows = [
+        { key: 'CAP1_R2_C1', rowName: 'rând.2' },
+        { key: 'CAP1_R3_C1', rowName: 'rând.3' },
+        { key: 'CAP1_R4_C1', rowName: 'rând.4' },
+        { key: 'CAP1_R5_C1', rowName: 'rând.5' },
+        { key: 'CAP1_R6_C1', rowName: 'rând.6' }
+    ];
+
+    // Iterate through each row and validate the condition
+    rows.forEach(row => {
+        var col1Value = Number(values[row.key] || 0); // Get the value of the current row's col.1
+
+        // Check if rând.1 col.1 is less than the current row's col.1
+        if (col1Row1 < col1Value) {
+            // Push an error to the webform errors array
+            webform.errors.push({
+                fieldName: row.key, // Use the key as the field name
+                weight: 1,
+                msg: concatMessage(
+                    'R1.01',
+                    `${row.rowName} col.1`,
+                    Drupal.t(`Valoarea din rândul 1, col.1 (${col1Row1}) trebuie să fie mai mare sau egală cu valoarea din ${row.rowName} col.1 (${col1Value}).`)
+                )
+            });
+        }
+    });
+}
+
+
+
+
+
+
+
+
+//--------------------------------------------------------
+
 
 function sort_errors_warinings(a, b) {
     if (!a.hasOwnProperty('weight')) {

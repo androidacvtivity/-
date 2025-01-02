@@ -1,0 +1,5 @@
+rînd.1 col.1  ≥  rînd.2 col.1   
+rînd.1 col.1  ≥  rînd.3 col.1
+rînd.1 col.1  ≥  rînd.4 col.1
+rînd.1 col.1  ≥  rînd.5 col.1
+rînd.1 col.1  ≥  rînd.6 col.1
