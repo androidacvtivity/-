@@ -29,7 +29,7 @@ webform.validators.NR6_25 = function (v, allowOverpass) {
     validatePhoneNumber(values.PHONE);
 
     validateRow1AgainstOtherRows();
- 
+    validateRow1Col1();
 
 
 
@@ -135,6 +135,41 @@ function validateRow1AgainstOtherRows() {
 
 
 //--------------------------------------------------------
+
+function validateRow1Col1() {
+    // Get the values object from Drupal settings
+    var values = Drupal.settings.mywebform.values;
+
+    // Retrieve and validate the value for Rind.1 COL1
+    var col1Row1 = Number(values['CAP1_R1_C1']);
+    col1Row1 = isNaN(col1Row1) ? 0 : col1Row1; // Ensure no NaN for COL1 Rind.1
+
+    // Retrieve and validate the values for Rind.2, Rind.3, and Rind.6 COL1
+    var col1Row2 = Number(values['CAP1_R2_C1']);
+    var col1Row3 = Number(values['CAP1_R3_C1']);
+    var col1Row6 = Number(values['CAP1_R6_C1']);
+
+    col1Row2 = isNaN(col1Row2) ? 0 : col1Row2;
+    col1Row3 = isNaN(col1Row3) ? 0 : col1Row3;
+    col1Row6 = isNaN(col1Row6) ? 0 : col1Row6;
+
+    // Calculate the sum of Rind.2, Rind.3, and Rind.6 COL1
+    var totalSum = col1Row2 + col1Row3 + col1Row6;
+
+    // Validate that Rind.1 COL1 is greater than or equal to the sum
+    if (col1Row1 < totalSum) {
+        // Push an error to the webform errors array
+        webform.errors.push({
+            fieldName: 'CAP1_R1_C1',
+            weight: 1,
+            msg: concatMessage(
+                '30-001',
+                'Rind.1 COL1',
+                Drupal.t(`Cod eroare: 30-001. Valoarea din Rind.1 COL1 (${col1Row1}) trebuie să fie mai mare sau egală cu suma valorilor din Rind.2 (${col1Row2}), Rind.3 (${col1Row3}), și Rind.6 (${col1Row6}) COL1 (${totalSum}).`)
+            )
+        });
+    }
+}
 
 
 function sort_errors_warinings(a, b) {
