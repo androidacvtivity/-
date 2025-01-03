@@ -3,3 +3,24 @@ rînd.1 col.1  ≥  rînd.3 col.1
 rînd.1 col.1  ≥  rînd.4 col.1
 rînd.1 col.1  ≥  rînd.5 col.1
 rînd.1 col.1  ≥  rînd.6 col.1
+
+
+Acum mesajul est asa 
+Rînd. 13 col.1 - Cod eroare: 30-006, CAP1_R13_C1 >= CAP1_R14_C1. Cod eroare: 30-006. Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
+
+dar trebuie sa fie asa 
+
+Rînd. 13 col.1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1. Cod eroare: 30-006. Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
+ si la toate de aplicat aceasta 
+
+ 
+ Acum arata asa 
+ Rînd. 13 col.1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1. Rînd. Rind.13 COL1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1. Cod eroare: 30-006. Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
+
+ Dar trebuie asa 
+
+Rind.13 COL1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1.  Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
+
+Now this create but not use concatMessage
+30-010	Rind.20COL1 >= Rind(21+22+23+24) COL1
+30-011	Rind.25COL1 >= Rind(26+27+28) COL1
