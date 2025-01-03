@@ -35,6 +35,7 @@ webform.validators.NR6_25 = function (v, allowOverpass) {
     validateRow10Col1();
     validateRowsCol1();
     validateComplexRowsCol1();
+    validateRowACol1();
     //Sort warnings & errors
     webform.warnings.sort(function (a, b) {
         return sort_errors_warinings(a, b);
@@ -47,6 +48,29 @@ webform.validators.NR6_25 = function (v, allowOverpass) {
     webform.validatorsStatus['NR6_25'] = 1;
     validateWebform();
 
+}
+//------------------------------------------------------------------
+
+function validateRowACol1() {
+    // Get the values object from Drupal settings
+    var values = Drupal.settings.mywebform.values;
+
+    // Validation for 30-012: Rind.A COL1 >= Rind.B COL1
+    var col1RowA = Number(values['CAP1_RA_C1']); // Replace with the actual key for Rind.A COL1
+    var col1RowB = Number(values['CAP1_RB_C1']); // Replace with the actual key for Rind.B COL1
+
+    // Ensure values are numbers, default to 0 if invalid
+    col1RowA = isNaN(col1RowA) ? 0 : col1RowA;
+    col1RowB = isNaN(col1RowB) ? 0 : col1RowB;
+
+    // Perform the validation check
+    if (col1RowA < col1RowB) {
+        webform.errors.push({
+            fieldName: 'CAP1_RA_C1', // Replace with the actual key for Rind.A COL1
+            weight: 1,
+            msg: `Cod eroare: 30-012, Rind.A COL1 >= Rind.B COL1. Valoarea din Rind.A COL1 (${col1RowA}) trebuie să fie mai mare sau egală cu valoarea din Rind.B COL1 (${col1RowB}).`
+        });
+    }
 }
 
 //--------------------------------------------------------------
