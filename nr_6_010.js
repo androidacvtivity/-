@@ -91,13 +91,13 @@ function validatePhoneNumber(phone) {
 }
 
 //---------------------------------------------------
-
 function validateRow1AgainstOtherRows() {
     // Get the values object from Drupal settings
     var values = Drupal.settings.mywebform.values;
 
-    // Retrieve the value for rând.1 col.1
-    var col1Row1 = Number(values['CAP1_R1_C1'] || 0); // Assuming this is the key for rând.1 col.1
+    // Retrieve and validate the value for rând.1 col.1
+    var col1Row1 = Number(values['CAP1_R1_C1']);
+    col1Row1 = isNaN(col1Row1) ? 0 : col1Row1; // Ensure no NaN for col.1 rând.1
 
     // Define the rows to compare against rând.1 col.1
     var rows = [
@@ -110,7 +110,9 @@ function validateRow1AgainstOtherRows() {
 
     // Iterate through each row and validate the condition
     rows.forEach(row => {
-        var col1Value = Number(values[row.key] || 0); // Get the value of the current row's col.1
+        // Get and validate the value of the current row's col.1
+        var col1Value = Number(values[row.key]);
+        col1Value = isNaN(col1Value) ? 0 : col1Value; // Ensure no NaN
 
         // Check if rând.1 col.1 is less than the current row's col.1
         if (col1Row1 < col1Value) {
@@ -127,9 +129,6 @@ function validateRow1AgainstOtherRows() {
         }
     });
 }
-
-
-
 
 
 
