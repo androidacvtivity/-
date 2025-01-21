@@ -24,3 +24,63 @@ Rind.13 COL1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1.  Valoarea din R
 Now this create but not use concatMessage
 30-010	Rind.20COL1 >= Rind(21+22+23+24) COL1
 30-011	Rind.25COL1 >= Rind(26+27+28) COL1
+
+
+Am creat branch-ul. 
+january0225	b0163928	Commit to january0225 by vitalie.bancu at 2025-01-02 15:10 - 1_CHELT - 1_chelt-vers050.js,29_agr24 -- 29_AGR_034.js rsf1-presc rsf1-presc24_007.js rsf1_21 - rsf1_24_034.js rsf3 -rsf3_24_002.js rsf2 - rsf2_01.js
+
+Modificarea raportului (Forma Nr.6) ID = 6_nr, nr_6_0014.js, adaugarea raportului Forma Nr.6 Anual ID = 6_nr_25, nr_6_022.js. --- january0325
+
+Am creat astazi unca un branch - raport nou Forma Nr.6 Anual ID = 6_nr_25 si o modificarea la nr. 6 raport trimestrial.
+Deci sunt 2 branc-uri 
+1. january0225
+2. january0325
+3. january03251
+
+
+RSF1_21 - "Situațiile financiare"
+
+january0325	9f888d61	Commit to january0325 by vitalie.bancu at 2025-01-03 14:32 - Modificarea raportului (Forma Nr.6) ID = 6_nr, nr_6_0014.js, adaugarea raportului Forma Nr.6 Anual ID = 6_nr_25, nr_6_022.js.
+
+january0225	b0163928	
+Commit to january0225 by vitalie.bancu at 2025-01-02 15:10 - 1_CHELT - 1_chelt-vers050.js,29_agr24 -- 29_AGR_034.js rsf1-presc rsf1-presc24_007.js rsf1_21 - rsf1_24_034.js rsf3 -rsf3_24_002.js rsf2 - rsf2_01.js	
+
+    Sync with branch View changes 
+
+january0325	9f888d61	Commit to january0325 by vitalie.bancu at 2025-01-03 14:32 - Modificarea raportului (Forma Nr.6) ID = 6_nr, nr_6_0014.js, adaugarea raportului Forma Nr.6 Anual ID = 6_nr_25, nr_6_022.js.	
+
+    Sync with branch View changes 
+
+january03251	088e9a52	Commit to january03251 by vitalie.bancu at 2025-01-03 15:33 - Modificarea raportului 24 Agro Anual ID = 24_agro_24 - 24_Agro_24_065.js
+
+RSF2 - "Situațiile financiare ale organizației necomerciale"
+
+RSF3 - "Situațiile financiare a reprezentanței entității nerezidente"
+
+
+RSF1-PRESC - "Situații financiare prescurtate"
+
+
+
+RSF3 - "Situațiile financiare a reprezentanței entității nerezidente"
+
+29_AGR24 - "PRODUCȚIA VEGETALĂ"
+
+6_NR_25 - "Efectivul animalelor si pasarilor in gospodariile populatiei (anual)"
+
+
+
+30-001	Rind.1 COL1 >= Rind(2+3+6) COL1
+30-002	Rind.3 COL1 >= Rind(4+5) COL1
+30-003	Rind.7 COL1 >= Rind(8+9) COL1
+30-004	Rind.10 COL1 >= Rind.11 COL1
+30-005	Rind.10 COL1 >= Rind.12 COL1
+30-006	Rind.13 COL1 >= Rind.14 COL1
+30-007	Rind.15 COL1 >= Rind.16 COL1
+30-008	Rind.16 COL1 >= Rind.17 COL1
+30-009	Rind.18 COL1 >= Rind.19 COL1
+30-010	Rind.20COL1 >= Rind(21+22+23+24) COL1
+30-011	Rind.25COL1 >= Rind(26+27+28) COL1
+
+
+6_NR - "Efectivul animalelor si pasarilor in gospodariile populatiei (trimestrial)"
