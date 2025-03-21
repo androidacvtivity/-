@@ -1,86 +1,32 @@
-rînd.1 col.1  ≥  rînd.2 col.1   
-rînd.1 col.1  ≥  rînd.3 col.1
-rînd.1 col.1  ≥  rînd.4 col.1
-rînd.1 col.1  ≥  rînd.5 col.1
-rînd.1 col.1  ≥  rînd.6 col.1
+function validateRow3Col1() {
+    // Get the values object from Drupal settings
+    var values = Drupal.settings.mywebform.values;
 
+    // Retrieve and validate the value for Rind.3 COL1
+    var col1Row3 = Number(values['CAP1_R3_C1']);
+    col1Row3 = isNaN(col1Row3) ? 0 : col1Row3; // Ensure no NaN for COL1 Rind.3
 
-Acum mesajul est asa 
-Rînd. 13 col.1 - Cod eroare: 30-006, CAP1_R13_C1 >= CAP1_R14_C1. Cod eroare: 30-006. Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
+    // Retrieve and validate the values for Rind.4 and Rind.5 COL1
+    var col1Row4 = Number(values['CAP1_R4_C1']);
+    var col1Row5 = Number(values['CAP1_R5_C1']);
 
-dar trebuie sa fie asa 
+    col1Row4 = isNaN(col1Row4) ? 0 : col1Row4;
+    col1Row5 = isNaN(col1Row5) ? 0 : col1Row5;
 
-Rînd. 13 col.1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1. Cod eroare: 30-006. Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
- si la toate de aplicat aceasta 
+    // Calculate the sum of Rind.4 and Rind.5 COL1
+    var totalSum = col1Row4 + col1Row5;
 
- 
- Acum arata asa 
- Rînd. 13 col.1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1. Rînd. Rind.13 COL1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1. Cod eroare: 30-006. Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
-
- Dar trebuie asa 
-
-Rind.13 COL1 - Cod eroare: 30-006, Rind.13 COL1 >= Rind.14 COL1.  Valoarea din Rind.13 COL1 trebuie să fie mai mare sau egală cu Rind.14 COL1. (1 < 13).
-
-Now this create but not use concatMessage
-30-010	Rind.20COL1 >= Rind(21+22+23+24) COL1
-30-011	Rind.25COL1 >= Rind(26+27+28) COL1
-
-
-Am creat branch-ul. 
-january0225	b0163928	Commit to january0225 by vitalie.bancu at 2025-01-02 15:10 - 1_CHELT - 1_chelt-vers050.js,29_agr24 -- 29_AGR_034.js rsf1-presc rsf1-presc24_007.js rsf1_21 - rsf1_24_034.js rsf3 -rsf3_24_002.js rsf2 - rsf2_01.js
-
-Modificarea raportului (Forma Nr.6) ID = 6_nr, nr_6_0014.js, adaugarea raportului Forma Nr.6 Anual ID = 6_nr_25, nr_6_022.js. --- january0325
-
-Am creat astazi unca un branch - raport nou Forma Nr.6 Anual ID = 6_nr_25 si o modificarea la nr. 6 raport trimestrial.
-Deci sunt 2 branc-uri 
-1. january0225
-2. january0325
-3. january03251
-
-
-RSF1_21 - "Situațiile financiare"
-
-january0325	9f888d61	Commit to january0325 by vitalie.bancu at 2025-01-03 14:32 - Modificarea raportului (Forma Nr.6) ID = 6_nr, nr_6_0014.js, adaugarea raportului Forma Nr.6 Anual ID = 6_nr_25, nr_6_022.js.
-
-january0225	b0163928	
-Commit to january0225 by vitalie.bancu at 2025-01-02 15:10 - 1_CHELT - 1_chelt-vers050.js,29_agr24 -- 29_AGR_034.js rsf1-presc rsf1-presc24_007.js rsf1_21 - rsf1_24_034.js rsf3 -rsf3_24_002.js rsf2 - rsf2_01.js	
-
-    Sync with branch View changes 
-
-january0325	9f888d61	Commit to january0325 by vitalie.bancu at 2025-01-03 14:32 - Modificarea raportului (Forma Nr.6) ID = 6_nr, nr_6_0014.js, adaugarea raportului Forma Nr.6 Anual ID = 6_nr_25, nr_6_022.js.	
-
-    Sync with branch View changes 
-
-january03251	088e9a52	Commit to january03251 by vitalie.bancu at 2025-01-03 15:33 - Modificarea raportului 24 Agro Anual ID = 24_agro_24 - 24_Agro_24_065.js
-
-RSF2 - "Situațiile financiare ale organizației necomerciale"
-
-RSF3 - "Situațiile financiare a reprezentanței entității nerezidente"
-
-
-RSF1-PRESC - "Situații financiare prescurtate"
-
-
-
-RSF3 - "Situațiile financiare a reprezentanței entității nerezidente"
-
-29_AGR24 - "PRODUCȚIA VEGETALĂ"
-
-6_NR_25 - "Efectivul animalelor si pasarilor in gospodariile populatiei (anual)"
-
-
-
-30-001	Rind.1 COL1 >= Rind(2+3+6) COL1
-30-002	Rind.3 COL1 >= Rind(4+5) COL1
-30-003	Rind.7 COL1 >= Rind(8+9) COL1
-30-004	Rind.10 COL1 >= Rind.11 COL1
-30-005	Rind.10 COL1 >= Rind.12 COL1
-30-006	Rind.13 COL1 >= Rind.14 COL1
-30-007	Rind.15 COL1 >= Rind.16 COL1
-30-008	Rind.16 COL1 >= Rind.17 COL1
-30-009	Rind.18 COL1 >= Rind.19 COL1
-30-010	Rind.20COL1 >= Rind(21+22+23+24) COL1
-30-011	Rind.25COL1 >= Rind(26+27+28) COL1
-
-
-6_NR - "Efectivul animalelor si pasarilor in gospodariile populatiei (trimestrial)"
+    // Validate that Rind.3 COL1 is greater than or equal to the sum
+    if (col1Row3 < totalSum) {
+        // Push an error to the webform errors array
+        webform.errors.push({
+            fieldName: 'CAP1_R3_C1',
+            weight: 1,
+            msg: concatMessage(
+                '30-002',
+                'Rind.3 COL1',
+                Drupal.t(`Cod eroare: 30-002. Valoarea din Rind.3 COL1 (${col1Row3}) trebuie să fie mai mare sau egală cu suma valorilor din Rind.4 (${col1Row4}) și Rind.5 (${col1Row5}) COL1 (${totalSum}).`)
+            )
+        });
+    }
+}
